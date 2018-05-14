@@ -4,7 +4,6 @@ const phrase = $('#phrase ul')[0];
 const scoreboard = $('#scoreboard')[0];
 const hearts = $('.tries > img');
 const buttons = $('#qwerty button');
-const letters = $('.letter');
 const title = $(overlay).find('.title')[0];
 const btnReset = $('.btn__reset')[0];
 
@@ -16,7 +15,7 @@ const phrases = [
   'A friend in need is a friend indeed',
   'All that glitters is not gold',
   'Bring home the bacon'
-]
+];
 
 function getRandomPhraseAsArray(arr) {
   const index = Math.floor(Math.random() * arr.length);
@@ -30,14 +29,14 @@ function addPhraseToDisplay(arr) {
     let li = `<li class=`;
     
     if (value === ' ') {
-      li += `"space">&nbsp;`
+      li += `"space">&nbsp;`;
     } else {
       li += `"letter">${value}`;
     }
     li += `</li>`;
 
     $(phrase).append(li);
-  }) // end of each
+  }); // end of each
 
 } // end of addPhraseToDisplay
 
