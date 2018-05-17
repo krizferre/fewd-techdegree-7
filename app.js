@@ -40,6 +40,8 @@ function addPhraseToDisplay(arr) {
 
 } // end of addPhraseToDisplay
 
+// if letter pressed has matches, show the letters in the phrase
+// and return that letter
 function checkLetter(button) {
   const letter = $(button)[0].textContent;
   let letterFound = null;
@@ -55,6 +57,8 @@ function checkLetter(button) {
   return letterFound;
 } // end of checkLetter
 
+// game won if no. of 'show' class is equal to no. of 'letter' class
+// game lost if no. of misses is greater than or equal to 5
 function checkWin() {
   const shows = $('.show').length;
   const letters = $('.letter').length;
@@ -84,6 +88,7 @@ function checkWin() {
 
 $(document).on('DOMContentLoaded', function() {
 
+  // starts/resets the game
   $(btnReset).on('click', function() {
     missed = 0;
 
@@ -104,6 +109,7 @@ $(document).on('DOMContentLoaded', function() {
     addPhraseToDisplay(phraseArray); 
   }); // end of btn__reset click
 
+  // the screen keyboard event
   $(qwerty).on('click', function(event) {
 
     if ($(event.target)[0].tagName !== 'BUTTON') {
